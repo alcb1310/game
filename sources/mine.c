@@ -1,22 +1,21 @@
 #include <raylib.h>
 
 #include "constants.h"
-#include "player.h"
+#include "game.h"
 
-Player _player;
+Game _game;
 
 int main(void) {
   InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Mine");
   SetTargetFPS(FPS);
 
-  _player = create_player(10);
+  _game = create_game();
 
   while (!WindowShouldClose()) {
     BeginDrawing();
     ClearBackground(BLACK);
-    move_player(&_player);
 
-    draw_player(&_player);
+    update_game(&_game);
 
     EndDrawing();
   }
