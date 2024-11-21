@@ -14,6 +14,7 @@ int main(void) {
   while (!WindowShouldClose()) {
     BeginDrawing();
     ClearBackground(BLACK);
+    move_player(&_player);
 
     draw_player(&_player);
 
