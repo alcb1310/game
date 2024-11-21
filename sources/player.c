@@ -6,7 +6,7 @@
 Player create_player(uint size) {
   return (Player){
       .size = size,
-      .position = (Vector2){10, SCREEN_HEIGHT - size - 10},
+      .position = (Vector2){10, SCREEN_HEIGHT - size - FLOOR_LEVEL},
       .speed = 5,
   };
 }

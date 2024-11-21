@@ -1,4 +1,5 @@
 #include "game.h"
+#include "levels/level1.h"
 #include "player.h"
 
 Player _player;
@@ -10,7 +11,13 @@ Game create_game(void) {
 }
 
 void update_game(Game *game) {
-    move_player(&_player);
+  move_player(&_player);
 
-    draw_player(&_player);
+  draw_player(&_player);
+
+  switch (game->level) {
+  case 1:
+    draw_level();
+    break;
+  }
 }
