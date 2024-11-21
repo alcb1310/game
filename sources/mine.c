@@ -1,16 +1,21 @@
 #include <raylib.h>
 
 #include "constants.h"
+#include "player.h"
+
+Player _player;
 
 int main(void) {
   InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Mine");
   SetTargetFPS(FPS);
 
+  _player = create_player(10);
+
   while (!WindowShouldClose()) {
     BeginDrawing();
     ClearBackground(BLACK);
 
-    DrawText("Hello World!", SCREEN_HEIGHT / 2 - 50, SCREEN_HEIGHT / 2, 20, WHITE);
+    draw_player(&_player);
 
     EndDrawing();
   }
