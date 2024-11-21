@@ -24,4 +24,16 @@ void move_player(Player *player) {
   if (IsKeyDown(KEY_LEFT)) {
     player->position.x -= player->speed;
   }
+
+  validate_collisions(player);
+}
+
+void validate_collisions(Player *player) {
+  if (player->position.x < 0) {
+    player->position.x = 0;
+  }
+
+  if (player->position.x + player->size > SCREEN_WIDTH) {
+    player->position.x = SCREEN_WIDTH - player->size;
+  }
 }

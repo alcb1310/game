@@ -15,4 +15,6 @@ Player create_player(uint size);
 void draw_player(Player *player);
 void move_player(Player *player); 
 
+void validate_collisions(Player *player);
+
 #endif // !PLAYER_H_
